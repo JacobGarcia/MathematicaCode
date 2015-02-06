@@ -1,0 +1,637 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     24555,        627]
+NotebookOptionsPosition[     23909,        599]
+NotebookOutlinePosition[     24281,        615]
+CellTagsIndexPosition[     24238,        612]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Animaci\[OAcute]n de cuadros", "Section",
+ CellChangeTimes->{{3.6128315137862716`*^9, 3.612831517793501*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Declaraci\[OAcute]n de variables y funciones\
+\>", "Subsection",
+ CellChangeTimes->{{3.6128315267770147`*^9, 3.612831556960741*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"H", "[", "k_", "]"}], ":=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"k", "0"},
+      {"0", "k"}
+     }], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{
+   RowBox[{"rot", "[", "a_", "]"}], ":=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {
+       RowBox[{"Cos", "[", "a", "]"}], 
+       RowBox[{"Sin", "[", "a", "]"}]},
+      {
+       RowBox[{"-", 
+        RowBox[{"Sin", "[", "a", "]"}]}], 
+       RowBox[{"Cos", "[", "a", "]"}]}
+     }], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{
+   RowBox[{"des", "[", "k_", "]"}], ":=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"1", "k"},
+      {"0", "1"}
+     }], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{
+   RowBox[{"des1", "[", "k_", "]"}], ":=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"1", "k"},
+      {"0", "1"}
+     }], "\[NoBreak]", ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", "12.14"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t1", "=", "16.86"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t2", "=", "20"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.61227125390903*^9, 3.612271271250678*^9}, {
+  3.6128314481345167`*^9, 3.612831464610459*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.6128315591798677`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Proceso de animaci\[OAcute]n", "Subsection",
+ CellChangeTimes->{{3.612831551253414*^9, 3.6128315545596037`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{"c", ",", 
+        RowBox[{"Which", "[", 
+         RowBox[{
+          RowBox[{"0", "\[LessEqual]", "a", "<", "5"}], ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                  }], "\[NoBreak]", ")"}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {"a"},
+                   {"0"}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}], ",", 
+          RowBox[{"5", "\[LessEqual]", "a", "\[LessEqual]", "t2"}], ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                  }], "\[NoBreak]", ")"}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {"5"},
+                   {"0"}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}]}], "]"}], ",", 
+        RowBox[{"Which", "[", 
+         RowBox[{
+          RowBox[{"0", "\[LessEqual]", "a", "<", " ", "5"}], ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                  }], "\[NoBreak]", ")"}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {"0"},
+                   {"0"}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"5", "\[LessEqual]", "a", "\[LessEqual]", "  ", "9"}], ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                  }], "\[NoBreak]", ")"}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"a", "-", "5"}]},
+                   {"0"}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"9", "\[LessEqual]", "a", "\[LessEqual]", " ", "t"}], ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"rot", "[", 
+                  RowBox[{"(", 
+                   RowBox[{"a", "-", "9"}], ")"}], "]"}], ".", 
+                 RowBox[{"(", "\[NoBreak]", GridBox[{
+                    {
+                    RowBox[{"-", "1"}], "0"},
+                    {"0", 
+                    RowBox[{"-", "1"}]}
+                   }], "\[NoBreak]", ")"}], ".", 
+                 RowBox[{"(", "\[NoBreak]", GridBox[{
+                    {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                    {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                   }], "\[NoBreak]", ")"}]}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {"5"},
+                   {"1"}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"a", "\[LessEqual]", " ", "t2"}], ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                  }], "\[NoBreak]", ")"}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {"5"},
+                   {"1"}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Which", "[", 
+         RowBox[{
+          RowBox[{"0", "\[LessEqual]", "a", "\[LessEqual]", "  ", "t"}], ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                  }], "\[NoBreak]", ")"}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {"0"},
+                   {"0"}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}], ",", 
+          RowBox[{"t", "<", "a", "<", "  ", 
+           RowBox[{"t", "+", "4"}]}], ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                  }], "\[NoBreak]", ")"}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"a", "-", "t"}]},
+                   {"0"}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}], ",", 
+          RowBox[{
+           RowBox[{"t", "+", "4"}], "\[LessEqual]", "a", "<", " ", "t1"}], 
+          ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                   {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                  }], "\[NoBreak]", ")"}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {"4"},
+                   {
+                    RowBox[{"1", "+", "a", "-", "t1"}]}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}], 
+          RowBox[{"(*", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"*", " ", "t"}], "+", "4"}], "\[LessEqual]", " ", "a", 
+             "<", " ", "t1"}], ",", 
+            RowBox[{"Flatten", "[", 
+             RowBox[{
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{"Transpose", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"rot", "[", 
+                    RowBox[{"(", 
+                    RowBox[{"a", "-", "9"}], ")"}], "]"}], ".", 
+                   RowBox[{"(", "\[NoBreak]", GridBox[{
+                    {
+                    RowBox[{"-", "1"}], "0"},
+                    {"0", 
+                    RowBox[{"-", "1"}]}
+                    }], "\[NoBreak]", ")"}], ".", 
+                   RowBox[{"(", "\[NoBreak]", GridBox[{
+                    {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                    {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                    }], "\[NoBreak]", ")"}]}], "+", 
+                  RowBox[{"(", "\[NoBreak]", GridBox[{
+                    {"5"},
+                    {"1"}
+                    }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "1", ",", 
+                  RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+              "1"}], "]"}]}], "**)"}], ",", 
+          RowBox[{"t1", "\[LessEqual]", " ", "a", "\[LessEqual]", " ", "t2"}],
+           ",", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"rot", "[", 
+                  RowBox[{"(", 
+                   RowBox[{"a", "-", "t1"}], ")"}], "]"}], ".", 
+                 RowBox[{"(", "\[NoBreak]", GridBox[{
+                    {
+                    RowBox[{"-", "1"}], "0"},
+                    {"0", 
+                    RowBox[{"-", "1"}]}
+                   }], "\[NoBreak]", ")"}], ".", 
+                 RowBox[{"(", "\[NoBreak]", GridBox[{
+                    {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "1"}], "]"}], "]"}]},
+                    {
+                    RowBox[{"c", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "2"}], "]"}], "]"}]}
+                   }], "\[NoBreak]", ")"}]}], "+", 
+                RowBox[{"(", "\[NoBreak]", GridBox[{
+                   {"5"},
+                   {"2"}
+                  }], "\[NoBreak]", ")"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", 
+                RowBox[{"Length", "[", "c", "]"}]}], "}"}]}], "]"}], ",", 
+            "1"}], "]"}]}], "]"}]}], "}"}], "]"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "3"}], ",", "9"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "3"}], ",", "4"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0", ",", "t2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.612273922786212*^9, 3.6122739878977003`*^9}, {
+   3.612274024791185*^9, 3.612274054268556*^9}, {3.6122740869080544`*^9, 
+   3.6122741816008663`*^9}, {3.6122742250563717`*^9, 3.612274282318013*^9}, {
+   3.6122745272010717`*^9, 3.612274550638136*^9}, {3.612274583640449*^9, 
+   3.612274621372076*^9}, {3.6122746593474007`*^9, 3.612274857365706*^9}, {
+   3.612274908691708*^9, 3.612274940138681*^9}, {3.61227500210845*^9, 
+   3.6122751137604523`*^9}, 3.612275185689068*^9, {3.612275259369275*^9, 
+   3.612275303818447*^9}, {3.612275359529285*^9, 3.612275389799676*^9}, {
+   3.6122754367290497`*^9, 3.612275447806425*^9}, {3.612275481408153*^9, 
+   3.61227554341117*^9}, {3.612275761280621*^9, 3.612275773913368*^9}, {
+   3.6122758078944683`*^9, 3.612275913029951*^9}, {3.6122759470309477`*^9, 
+   3.612275964851984*^9}, {3.6122760195406218`*^9, 3.612276024202783*^9}, {
+   3.612276097966988*^9, 3.612276100679356*^9}, 3.612276147792356*^9, {
+   3.612276185707795*^9, 3.612276197542425*^9}, {3.612276333071609*^9, 
+   3.612276428574986*^9}, {3.6123997003625364`*^9, 3.6123997181885557`*^9}, {
+   3.6123997589348865`*^9, 3.6123997690904675`*^9}, {3.612399835841285*^9, 
+   3.612399902274085*^9}, {3.6123999586263084`*^9, 3.6123999762563167`*^9}, {
+   3.612400015589566*^9, 3.6124000441371994`*^9}, {3.612400094526081*^9, 
+   3.6124001497942424`*^9}, {3.6124002214363403`*^9, 3.612400296704645*^9}, {
+   3.612400334489806*^9, 3.6124003912640533`*^9}, {3.6124004271531067`*^9, 
+   3.6124005228725815`*^9}, {3.6124005560094767`*^9, 
+   3.6124005562064877`*^9}, {3.612400608061454*^9, 3.612400610369586*^9}, {
+   3.6124006413583584`*^9, 3.6124006420944004`*^9}, {3.6124006735221977`*^9, 
+   3.6124007255821753`*^9}, {3.612400787044691*^9, 3.6124008572847085`*^9}, {
+   3.612400932948036*^9, 3.6124010197199993`*^9}, {3.612401121614827*^9, 
+   3.612401133464505*^9}, 3.61240116362123*^9, {3.612401210989939*^9, 
+   3.612401244535858*^9}, {3.612795452311017*^9, 3.6127954553341894`*^9}, {
+   3.612796253414837*^9, 3.612796346279149*^9}, {3.612796384098312*^9, 
+   3.6127964002032332`*^9}, {3.612796442440649*^9, 3.6127964448827887`*^9}, {
+   3.6127964992018957`*^9, 3.61279652761252*^9}, {3.6127965984255705`*^9, 
+   3.612796598789592*^9}, {3.612796631546465*^9, 3.6127967028645444`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 20., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0, 20}}, Typeset`size$$ = {360., {103., 107.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$1280$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`a$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$1280$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics[
+        Line[{$CellContext`c, 
+          Which[
+           Inequality[0, LessEqual, $CellContext`a$$, Less, 5], 
+           Flatten[
+            Table[
+             Transpose[{{
+                 Part[$CellContext`c, $CellContext`i, 1]}, {
+                 
+                 Part[$CellContext`c, $CellContext`i, 
+                  2]}} + {{$CellContext`a$$}, {0}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 1], 
+           5 <= $CellContext`a$$ <= $CellContext`t2, 
+           Flatten[
+            Table[
+             Transpose[{{
+                 Part[$CellContext`c, $CellContext`i, 1]}, {
+                 Part[$CellContext`c, $CellContext`i, 2]}} + {{5}, {
+               0}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 1]], 
+          Which[
+           Inequality[0, LessEqual, $CellContext`a$$, Less, 5], 
+           Flatten[
+            Table[
+             Transpose[{{
+                 Part[$CellContext`c, $CellContext`i, 1]}, {
+                 Part[$CellContext`c, $CellContext`i, 2]}} + {{0}, {
+               0}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 1], 5 <= $CellContext`a$$ <= 9, 
+           Flatten[
+            Table[
+             Transpose[{{
+                 Part[$CellContext`c, $CellContext`i, 1]}, {
+                 
+                 Part[$CellContext`c, $CellContext`i, 
+                  2]}} + {{$CellContext`a$$ - 5}, {0}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 1], 
+           9 <= $CellContext`a$$ <= $CellContext`t, 
+           Flatten[
+            Table[
+             Transpose[Dot[
+                $CellContext`rot[$CellContext`a$$ - 9], {{-1, 0}, {0, -1}}, {{
+                  Part[$CellContext`c, $CellContext`i, 1]}, {
+                  Part[$CellContext`c, $CellContext`i, 2]}}] + {{5}, {
+               1}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 
+            1], $CellContext`a$$ <= $CellContext`t2, 
+           Flatten[
+            Table[
+             Transpose[{{
+                 Part[$CellContext`c, $CellContext`i, 1]}, {
+                 Part[$CellContext`c, $CellContext`i, 2]}} + {{5}, {
+               1}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 1]], 
+          Which[0 <= $CellContext`a$$ <= $CellContext`t, 
+           Flatten[
+            Table[
+             Transpose[{{
+                 Part[$CellContext`c, $CellContext`i, 1]}, {
+                 Part[$CellContext`c, $CellContext`i, 2]}} + {{0}, {
+               0}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 
+            1], $CellContext`t < $CellContext`a$$ < $CellContext`t + 4, 
+           Flatten[
+            Table[
+             Transpose[{{
+                 Part[$CellContext`c, $CellContext`i, 1]}, {
+                 
+                 Part[$CellContext`c, $CellContext`i, 
+                  2]}} + {{$CellContext`a$$ - $CellContext`t}, {
+                0}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 1], 
+           
+           Inequality[$CellContext`t + 4, LessEqual, $CellContext`a$$, 
+            Less, $CellContext`t1], 
+           Flatten[
+            Table[
+             Transpose[{{
+                 Part[$CellContext`c, $CellContext`i, 1]}, {
+                 Part[$CellContext`c, $CellContext`i, 2]}} + {{4}, {
+                1 + $CellContext`a$$ - $CellContext`t1}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 
+            1], $CellContext`t1 <= $CellContext`a$$ <= $CellContext`t2, 
+           Flatten[
+            Table[
+             Transpose[Dot[
+                $CellContext`rot[$CellContext`a$$ - $CellContext`t1], {{-1, 
+                0}, {0, -1}}, {{
+                  Part[$CellContext`c, $CellContext`i, 1]}, {
+                  Part[$CellContext`c, $CellContext`i, 2]}}] + {{5}, {
+               2}}], {$CellContext`i, 1, 
+              Length[$CellContext`c]}], 1]]}], 
+        PlotRange -> {{-3, 9}, {-3, 4}}], 
+      "Specifications" :> {{$CellContext`a$$, 0, 20}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {152., 157.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.6128314769341636`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{701, 810},
+WindowMargins->{{28, Automatic}, {Automatic, 36}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 115, 1, 79, "Section"],
+Cell[CellGroupData[{
+Cell[719, 27, 142, 3, 43, "Subsection"],
+Cell[864, 32, 1610, 52, 157, "Input"],
+Cell[2477, 86, 89, 1, 52, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2603, 92, 118, 1, 43, "Subsection"],
+Cell[CellGroupData[{
+Cell[2746, 97, 15702, 372, 844, "Input"],
+Cell[18451, 471, 5418, 123, 326, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

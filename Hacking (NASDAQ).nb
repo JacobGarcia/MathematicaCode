@@ -1,0 +1,146 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4052,        137]
+NotebookOptionsPosition[      3313,        106]
+NotebookOutlinePosition[      3685,        122]
+CellTagsIndexPosition[      3642,        119]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Hacking (NASDAQ)", "Section",
+ CellChangeTimes->{{3.612617470644353*^9, 3.6126174951747556`*^9}, {
+  3.612617556991291*^9, 3.612617558446375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"precio", ":=", 
+  RowBox[{"FinancialData", "[", "\"\<AAPL\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.612617561530551*^9, 3.612617598698677*^9}}],
+
+Cell[BoxData[
+ RowBox[{"precioTemporal", ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"DateList", "[", "]"}], ",", "precio"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6126176104593496`*^9, 3.6126176472704554`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"datos", "=", 
+   RowBox[{"{", "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6126176554629235`*^9, 3.612617660377205*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", 
+  RowBox[{
+   RowBox[{"Last", "[", 
+    RowBox[{"AppendTo", "[", 
+     RowBox[{"datos", ",", "precioTemporal"}], "]"}], "]"}], ",", 
+   RowBox[{"UpdateInterval", "\[Rule]", "2"}], ",", 
+   RowBox[{"TrackedSymbols", "\[Rule]", 
+    RowBox[{"{", "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6126176757940865`*^9, 3.6126177716935716`*^9}, {
+  3.6126180338085637`*^9, 3.612618054306736*^9}, {3.6126185231975555`*^9, 
+  3.6126185241156077`*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   Last[
+    AppendTo[$CellContext`datos, $CellContext`precioTemporal]], StandardForm],
+  ImageSizeCache->{64., {1., 9.}},
+  TrackedSymbols:>{},
+  UpdateInterval:>2]], "Output",
+ CellChangeTimes->{
+  3.6126177789619875`*^9, 3.6126180371637554`*^9, {3.6126182862090006`*^9, 
+   3.6126183584671335`*^9}, 3.6126185261057215`*^9, 3.6135037957090197`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", 
+  RowBox[{
+   RowBox[{"DateListPlot", "[", 
+    RowBox[{"datos", ",", 
+     RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}], ",", 
+   RowBox[{"SynchronousUpdating", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6126178269387317`*^9, 3.612617852484193*^9}, {
+  3.612617885991109*^9, 3.6126179453475037`*^9}, {3.612618040262933*^9, 
+  3.612618057886941*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   DateListPlot[$CellContext`datos, Joined -> True, PlotRange -> Full], 
+   StandardForm],
+  ImageSizeCache->{360., {120., 125.}},
+  SynchronousUpdating->True]], "Output",
+ CellChangeTimes->{
+  3.612617947569631*^9, {3.6126180415350056`*^9, 3.6126180584149714`*^9}, {
+   3.6126182872790613`*^9, 3.6126183585261364`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["precio"], "Input",
+ CellChangeTimes->{{3.6126515177882853`*^9, 3.6126515183353167`*^9}}],
+
+Cell[BoxData["94.03`"], "Output",
+ CellChangeTimes->{3.6126515202404256`*^9, 3.613503826771796*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{701, 675},
+WindowMargins->{{216, Automatic}, {0, Automatic}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 152, 2, 79, "Section"],
+Cell[734, 26, 172, 3, 31, "Input"],
+Cell[909, 31, 217, 5, 31, "Input"],
+Cell[1129, 38, 158, 4, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1312, 46, 485, 11, 52, "Input"],
+Cell[1800, 59, 385, 9, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2222, 73, 464, 10, 52, "Input"],
+Cell[2689, 85, 355, 8, 260, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3081, 98, 102, 1, 31, "Input"],
+Cell[3186, 101, 99, 1, 31, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

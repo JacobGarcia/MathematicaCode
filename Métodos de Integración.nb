@@ -1,0 +1,2271 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     80840,       2262]
+NotebookOptionsPosition[     78621,       2183]
+NotebookOutlinePosition[     79090,       2201]
+CellTagsIndexPosition[     79047,       2198]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Integraci\[OAcute]n Num\[EAcute]rica", "Section",
+ CellChangeTimes->{{3.611407712550235*^9, 3.6114077236938725`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"metodoTrapecio", "[", 
+    RowBox[{"a0_", ",", "b0_", ",", "n0_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", "=", 
+        RowBox[{"N", "[", "a0", "]"}]}], ",", 
+       RowBox[{"b", "=", 
+        RowBox[{"N", "[", "b0", "]"}]}], ",", 
+       RowBox[{"n", "=", "n0"}], ",", "i"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"h", "=", 
+       FractionBox[
+        RowBox[{"b", "-", "a"}], "n"]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sum", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"i", "\[LessEqual]", " ", 
+         RowBox[{"n", "-", "1"}]}], ",", 
+        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"sum", " ", "=", 
+          RowBox[{"sum", "+", 
+           RowBox[{"f", "[", 
+            RowBox[{"a", "+", 
+             RowBox[{"i", "*", "h"}]}], "]"}]}]}], ";"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{
+        RowBox[{
+         FractionBox["h", "2"], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"f", "[", "a", "]"}], "+", 
+           RowBox[{"f", "[", "b", "]"}]}], ")"}]}], "+", 
+        RowBox[{"h", "*", "sum"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.611407770059524*^9, 3.611407820653418*^9}, {
+   3.6114079631565685`*^9, 3.6114079844297857`*^9}, {3.611408016737633*^9, 
+   3.6114081504342804`*^9}, {3.611408193515744*^9, 3.611408205305419*^9}, {
+   3.611408239140354*^9, 3.611408259030492*^9}, {3.61140829098732*^9, 
+   3.611408302640986*^9}, {3.6114083449994087`*^9, 3.611408348481608*^9}, {
+   3.6114084017416544`*^9, 3.611408419034643*^9}, {3.611408471702656*^9, 
+   3.611408599373958*^9}, 3.611408646936679*^9, {3.611408906572529*^9, 
+   3.61140892145138*^9}, {3.6114094700557585`*^9, 3.611409480892378*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", 
+  RowBox[{"Exp", "[", 
+   RowBox[{"-", 
+    SuperscriptBox["x", "2"]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.611409085256749*^9, 3.6114090992205477`*^9}, {
+  3.611783116384544*^9, 3.6117831185616684`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"Filling", "\[Rule]", "Bottom"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.611408680852618*^9, 3.6114087202058697`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[GraphicsComplexBox[CompressedData["
+1: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
+6mJ5miof/Ldfxfx//Ldf+i//PwlLCFk=
+   "], {{{}, 
+     {Hue[0.67, 0.6, 0.6], Opacity[0.2], EdgeForm[None], 
+      GraphicsGroupBox[PolygonBox[CompressedData["
+1:eJwl1He8zXUYB/BzXXuTke3e69p770plRLr3ZlZkZDWQJEoool2UzFDRsBpo
+GymrIqtBgyKkQkY7eT/88X59nvP5vl7nnN/zO+eX0m9Y1tBsiUQiiR5JF7J7
+0oW5vrmbLEUW+70uLjuzxPwNRcxXcbf5Jb6igNdtudo8mOls5B8a6uvJMbzI
+l+TXXUkn8yCeZgN/00BfV45mEV+QT3cFHc0DeYqP+Iv6+jryLhbyOXl1l8f3
+NA9gGh/yJ/X0teUoXmA3eXRt6GC+iams5w/q6mvJO3meXeTWXUZ7c3+e5AN+
+p46+phzJc+wkl+5S2pn78QTrOENtfQ15BwvYQU7dJbFTc18eZy2nqaWvLkcw
+n+3k0LWOnZr78BhrOEVNfTV5O/P4jOy6VrFT8408ympOUkNfVQ7nWbaRrGsZ
+OzX35hHe5zeq66vIYcxlK9l0LWKn5l48zHucoJq+shzKHD6N36KueezUfAMP
+8S7HqapPl7cxm08SifM/2maxU+P1PMg7HKOKvpK8lVl8zP80jZ3K65jC2/xK
+ZX2abE1PJvMWv5DuLFW2ogcP8CY/U8lZimxJdyaxiqOkOasoW9CNiazkJ1Kd
+VZDN6cr9rOAIKc7Ky2Z04T7e4DAVnZWL6+BaJvA6h6jgrKwsQ2lKcTElKUFx
+inERRSlCYQpRkALkJx95yUNucpGTJmQxntf4kfI+M4dsTCbjeJWDlHOWXd7C
+TLZwNt5H30hmcC/LOUBZfbK8mRls5r94b31D+Qp74/vGf45rzGNZxg9x3bp4
+pi3m67i2+C8zxPxdXHc8a3jGvIl/aeR1A7kvdhPPLl6OnckM9sRu4j8bz7/Y
+p8zk27g3smg8j7gn7qMsEd+LpXF/5PdxL+Q50KyRNA==
+        "]]]}, {}, {}}, {{}, {}, 
+     {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJwl1Hecz3UcB/DjnDOO46xTiYsoI8WpRDIScnfpupNZOWWUTmkgomWm7FSU
+Nk1Cw2wYKbJKRJtQIg0ZGT3fj/54/l7v7+v7eHx/7+/nfo/LKBiYW1gkISGh
+s4/IM3z8KK+Tb8hrZGXyGea6o0wjj29dXyvTyTG3k2X52txJVmGuOVtW5Htz
+Y5qYT8hPeIIs1xX4ztyfDuZy7DS/RlHOdP2TfJPhsRftdansML9KJhe7PinX
+MoNbSeQs/S75FvfHfrEHl+hPyU95ktsoRjX9bjmPEfGe8WySONu9n+V8RpIb
+z6E4yZSgJKUoTQplKEsq5ShPGhWoSCUqU4V0qsbfIt47dqe679wj3+aB+Ptw
+aexJDff2ygU8SB5NY08y3NsnF/IQ+VwWz+Mc936Ri3g4fgM0i+dR071f5Ts8
+wvU0j+dRy7398l1G0YXL43mc695v8j1G05UW8Txqu3dAvs8YunFFvIf+tPyM
+pxgQ30Ed/UG5mLF0p2W8W/xQWSee5vb4Xs7T/S6XMI4etIr3jd82680zKYxd
+OF93SC5lPD1pHWegL8rn5lkMjF2oq/tDLuNRbqBNnIs+kQ3mZ7gjdqGe7k+5
+nAncyJVxVvpibDQ/y52xC/V1f8kVPMZNtI3z0yexyTybQbELDXR/yw94nF5c
+FWeqL85m83PcFbtwge6w/JCJFNAuzlSfzBbz89wdu9BQ94/8iEn0pn2cqb4E
+X5hf4J7YhQt1R+THTOZmOsSZ6kvypflF7o1duEh3VK5kCrdwdZypvhRbzS8x
+OHahke6YXMVU+tAxzlRfmq/MLzMkdqGx7rhczTT6khVnqk9hm/kVhsYuZOr+
+lWuYTj+y40z1ZdhunsN9safr8nxjfp0ccyV+MOfKqkX+/5/ayPV/epaQfw==
+
+       "]]}}}],
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  Method->{"AxesInFront" -> True},
+  PlotRange->{{0, 3}, {0., 0.9999999999999962}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.611408703729927*^9, 3.6114087208279047`*^9}, {
+   3.6114090801044545`*^9, 3.611409102129714*^9}, 3.611409490342919*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.61140875728299*^9, 3.6114087748259935`*^9}}],
+
+Cell[BoxData["0.8862073482595232`"], "Output",
+ CellChangeTimes->{3.611408776752104*^9, 3.611409061982418*^9, 
+  3.6114094903689203`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"metodoTrapecio", "[", 
+  RowBox[{"0", ",", "3", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.611408820078582*^9, 3.6114088415998125`*^9}, 
+   3.6114090185479336`*^9}],
+
+Cell[BoxData["0.8861884778115767`"], "Output",
+ CellChangeTimes->{
+  3.61140884242486*^9, {3.6114089266666784`*^9, 3.611408929856861*^9}, {
+   3.611409012423583*^9, 3.6114090632254887`*^9}, {3.6114091041588306`*^9, 
+   3.6114091295692835`*^9}, 3.6114093934973793`*^9, 3.6114094903889217`*^9, {
+   3.6117831212878246`*^9, 3.611783125697077*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"i", ",", 
+      RowBox[{"NIntegrate", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "x", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NumberForm", "[", 
+       RowBox[{
+        RowBox[{"metodoTrapecio", "[", 
+         RowBox[{"0", ",", "3", ",", "i"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"10", ",", "10"}], "}"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"NIntegrate", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], "-", 
+          RowBox[{"metodoTrapecio", "[", 
+           RowBox[{"0", ",", "3", ",", "i"}], "]"}]}], 
+         RowBox[{"NIntegrate", "[", 
+          RowBox[{
+           RowBox[{"f", "[", "x", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "*", "100"}], 
+       "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "30"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6114091818432736`*^9, 3.6114093813426847`*^9}, {
+  3.6114095159773846`*^9, 3.611409527617051*^9}, {3.6114095579807873`*^9, 
+  3.611409559532876*^9}, {3.611409594414871*^9, 3.611409600845239*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"1", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.5001851150\"\>",
+       1.50018511470613,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "69.28150253464219`"},
+    {"2", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9081913942\"\>",
+       0.9081913941958615,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "2.480688743950736`"},
+    {"3", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862567850\"\>",
+       0.8862567849622198,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.005578457772182625`"},
+    {"4", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8861801022\"\>",
+       0.8861801022167373,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0030744546227733736`"},
+    {"5", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8861884778\"\>",
+       0.8861884778115767,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0021293490720340666`"},
+    {"6", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8861936234\"\>",
+       0.8861936233658585,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0015487226202361894`"},
+    {"7", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8861969638\"\>",
+       0.8861969637664906,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0011717904453155223`"},
+    {"8", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8861992394\"\>",
+       0.8861992394282806,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0009150038372517297`"},
+    {"9", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862008523\"\>",
+       0.886200852314631,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0007330050811441657`"},
+    {"10", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862020336\"\>",
+       0.8862020336374,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0005997041362388288`"},
+    {"11", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862029230\"\>",
+       0.8862029230428423,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0004993432619985593`"},
+    {"12", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862036085\"\>",
+       0.8862036084802033,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00042199822956036007`"},
+    {"13", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862041474\"\>",
+       0.8862041473787066,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00036118870182122134`"},
+    {"14", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862045784\"\>",
+       0.8862045784335822,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0003125482931709108`"},
+    {"15", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862049284\"\>",
+       0.8862049284409771,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00027305331543999833`"},
+    {"16", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862052164\"\>",
+       0.8862052164084695,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00024055894569991623`"},
+    {"17", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862054561\"\>",
+       0.8862054561082116,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0002135111286708849`"},
+    {"18", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862056577\"\>",
+       0.8862056577089692,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0001907624166409924`"},
+    {"19", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862058288\"\>",
+       0.8862058288464976,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0001714511878741646`"},
+    {"20", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862059753\"\>",
+       0.8862059753419174,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00015492058472777267`"},
+    {"21", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862061017\"\>",
+       0.8862061016939647,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0001406629679715384`"},
+    {"22", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862062114\"\>",
+       0.8862062114226888,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.0001282811338192404`"},
+    {"23", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862063073\"\>",
+       0.8862063073135654,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00011746076804809275`"},
+    {"24", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862063916\"\>",
+       0.886206391593595,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00010795057500044642`"},
+    {"25", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862064661\"\>",
+       0.8862064660601667,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00009954773656393398`"},
+    {"26", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862065322\"\>",
+       0.8862065321765928,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00009208713197273847`"},
+    {"27", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862065911\"\>",
+       0.8862065911437967,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00008543324854316185`"},
+    {"28", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862066440\"\>",
+       0.8862066439547095,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00007947404352667036`"},
+    {"29", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862066914\"\>",
+       0.8862066914359712,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00007411623851710587`"},
+    {"30", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8862067343\"\>",
+       0.8862067342802122,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "0.00006928167681684663`"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.6114093839018307`*^9, 3.611409490628935*^9, {3.611409532918354*^9, 
+   3.6114095620540204`*^9}, 3.6114096050204782`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sumas de Riemann", "Section",
+ CellChangeTimes->{{3.6114105397249403`*^9, 3.6114105491514792`*^9}, {
+  3.6114106526784005`*^9, 3.6114106584117284`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"*", " ", "Suma", " ", "Inferior"}], " ", "**)"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"sumaInferior", "[", 
+    RowBox[{"a0_", ",", "b0_", ",", "n0_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", "=", 
+        RowBox[{"N", "[", "a0", "]"}]}], ",", 
+       RowBox[{"b", "=", 
+        RowBox[{"N", "[", "b0", "]"}]}], ",", 
+       RowBox[{"n", "=", "n0"}], ",", "i"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"h", "=", 
+       FractionBox[
+        RowBox[{"b", "-", "a"}], "n"]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sum", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "0"}], ",", 
+        RowBox[{"i", "\[LessEqual]", " ", 
+         RowBox[{"n", "-", "1"}]}], ",", 
+        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"sum", " ", "=", 
+          RowBox[{"sum", "+", 
+           RowBox[{"h", "*", 
+            RowBox[{"f", "[", 
+             RowBox[{"a", "+", 
+              RowBox[{"i", "*", "h"}]}], "]"}]}]}]}], ";"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "sum", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sumaInferior", "[", 
+  RowBox[{"0", ",", "3", ",", "50"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6114101971353445`*^9, 3.6114102083149843`*^9}, {
+  3.611410456140159*^9, 3.611410459816369*^9}}],
+
+Cell[BoxData["0.9162034242268732`"], "Output",
+ CellChangeTimes->{
+  3.611410208787011*^9, 3.611410256937765*^9, 3.6114102972850733`*^9, {
+   3.611410457217221*^9, 3.6114104600223813`*^9}, {3.611783111806282*^9, 
+   3.6117831295642977`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"i", ",", 
+      RowBox[{"NIntegrate", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "x", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NumberForm", "[", 
+       RowBox[{
+        RowBox[{"sumaInferior", "[", 
+         RowBox[{"0", ",", "3", ",", "i"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"10", ",", "10"}], "}"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"NIntegrate", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], "-", 
+          RowBox[{"sumaInferior", "[", 
+           RowBox[{"0", ",", "3", ",", "i"}], "]"}]}], 
+         RowBox[{"NIntegrate", "[", 
+          RowBox[{
+           RowBox[{"f", "[", "x", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "*", "100"}], 
+       "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "30"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6114104840157537`*^9, 3.6114104946983643`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"1", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"3.0000000000\"\>",
+       3.,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "238.5212282308292`"},
+    {"2", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.6580988370\"\>",
+       1.6580988368427965`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "87.10055159204425`"},
+    {"3", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.3861950800\"\>",
+       1.3861950800601766`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "56.4188203565012`"},
+    {"4", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.2611338240\"\>",
+       1.261133823540205,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "42.306856969424004`"},
+    {"5", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.1861514550\"\>",
+       1.1861514548703507`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "33.84581579016537`"},
+    {"6", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.1361627710\"\>",
+       1.1361627709148368`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "28.20507222674426`"},
+    {"7", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.1004562330\"\>",
+       1.1004562330941863`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "24.175931880438544`"},
+    {"8", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.0736761000\"\>",
+       1.0736761000900146`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "21.15405070818615`"},
+    {"9", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.0528469510\"\>",
+       1.0528469506806164`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "18.803680961161845`"},
+    {"10", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.0361835220\"\>",
+       1.0361835221667868`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "16.923372865482435`"},
+    {"11", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.0225497310\"\>",
+       1.0225497307968303`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "15.384930265482256`"},
+    {"12", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.0111881820\"\>",
+       1.0111881822546926`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "14.102888476452712`"},
+    {"13", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"1.0015745230\"\>",
+       1.0015745231705429`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "13.018079249466426`"},
+    {"14", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9933342131\"\>",
+       0.99333421309743,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "12.088239287148744`"},
+    {"15", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9861925875\"\>",
+       0.9861925874605685,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "11.282375326430369`"},
+    {"16", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9799436467\"\>",
+       0.9799436467393365,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "10.577242297066007`"},
+    {"17", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9744298611\"\>",
+       0.9744298611254981,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "9.95506447099999`"},
+    {"18", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9695287069\"\>",
+       0.9695287068919617,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "9.402016220704828`"},
+    {"19", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9651434544\"\>",
+       0.9651434543882799,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "8.907182532821931`"},
+    {"20", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9611967196\"\>",
+       0.9611967196066108,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "8.461831364224617`"},
+    {"21", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9576258581\"\>",
+       0.9576258581365299,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "8.058893893993305`"},
+    {"22", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9543796153\"\>",
+       0.9543796152996834,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "7.69258652323837`"},
+    {"23", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9514156502\"\>",
+       0.9514156501524291,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "7.358131482544408`"},
+    {"24", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9486986785\"\>",
+       0.9486986784808394,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "7.051547286766105`"},
+    {"25", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9461990615\"\>",
+       0.9461990614719216,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "6.769489480110921`"},
+    {"26", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9438917201\"\>",
+       0.943891720072511,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "6.509128131952151`"},
+    {"27", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9417552906\"\>",
+       0.9417552905991251,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "6.268052555499107`"},
+    {"28", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9397714613\"\>",
+       0.9397714612866338,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "6.044196443677481`"},
+    {"29", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9379244461\"\>",
+       0.937924446101277,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "5.835778493974823`"},
+    {"30", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.9362005638\"\>",
+       0.9362005637900083,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "5.6412549081961245`"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.611410496694479*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"sumaSuperior", "[", 
+    RowBox[{"a0_", ",", "b0_", ",", "n0_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", "=", 
+        RowBox[{"N", "[", "a0", "]"}]}], ",", 
+       RowBox[{"b", "=", 
+        RowBox[{"N", "[", "b0", "]"}]}], ",", 
+       RowBox[{"n", "=", "n0"}], ",", "i"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"h", "=", 
+       FractionBox[
+        RowBox[{"b", "-", "a"}], "n"]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sum", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"i", "\[LessEqual]", " ", "n"}], ",", 
+        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"sum", " ", "=", 
+          RowBox[{"sum", "+", 
+           RowBox[{"h", "*", 
+            RowBox[{"f", "[", 
+             RowBox[{"a", "+", 
+              RowBox[{"i", "*", "h"}]}], "]"}]}]}]}], ";"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "sum", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6114106933627276`*^9, 3.6114107081915755`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sumaSuperior", "[", 
+  RowBox[{"0", ",", "3", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.611410710401702*^9, 3.6114107202562656`*^9}}],
+
+Cell[BoxData["0.5862255007528026`"], "Output",
+ CellChangeTimes->{3.611410720576284*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"i", ",", 
+      RowBox[{"NIntegrate", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "x", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NumberForm", "[", 
+       RowBox[{
+        RowBox[{"sumaSuperior", "[", 
+         RowBox[{"0", ",", "3", ",", "i"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"10", ",", "10"}], "}"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"NIntegrate", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], "-", 
+          RowBox[{"sumaSuperior", "[", 
+           RowBox[{"0", ",", "3", ",", "i"}], "]"}]}], 
+         RowBox[{"NIntegrate", "[", 
+          RowBox[{
+           RowBox[{"f", "[", "x", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "*", "100"}], 
+       "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "30"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6114107468757887`*^9, 3.611410752366102*^9}, {
+   3.6114110548264017`*^9, 3.611411056201481*^9}, 3.611411140474301*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"1", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.0003702294\"\>",
+       0.0003702294122600387,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "99.95822316154485`"},
+    {"2", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.1582839515\"\>",
+       0.15828395154892652`,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "82.13917410414278`"},
+    {"3", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.3863184899\"\>",
+       0.3863184898642632,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "56.407663440956824`"},
+    {"4", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.5112263809\"\>",
+       0.5112263808932698,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "42.31300587866953`"},
+    {"5", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.5862255008\"\>",
+       0.5862255007528026,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "33.85007448830946`"},
+    {"6", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.6362244758\"\>",
+       0.6362244758168801,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "28.208169671984745`"},
+    {"7", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.6719376944\"\>",
+       0.6719376944387948,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "24.178275461329186`"},
+    {"8", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.6987223788\"\>",
+       0.6987223787665471,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "21.155880715860604`"},
+    {"9", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.7195547539\"\>",
+       0.7195547539486454,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "18.805146971324145`"},
+    {"10", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.7362205451\"\>",
+       0.7362205451080128,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "16.924572273754965`"},
+    {"11", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.7498561153\"\>",
+       0.7498561152888541,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "15.385928952006278`"},
+    {"12", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.7612190347\"\>",
+       0.7612190347057141,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "14.10373247291182`"},
+    {"13", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.7708337716\"\>",
+       0.7708337715868704,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "13.018801626870058`"},
+    {"14", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.7790749438\"\>",
+       0.7790749437697344,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "12.0888643837351`"},
+    {"15", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.7862172694\"\>",
+       0.7862172694213857,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "11.282921433061247`"},
+    {"16", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.7924667861\"\>",
+       0.7924667860776028,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "10.57772341495737`"},
+    {"17", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.7979810511\"\>",
+       0.7979810510909252,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "9.955491493257306`"},
+    {"18", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8028826085\"\>",
+       0.8028826085259761,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "9.402397745538172`"},
+    {"19", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8072682033\"\>",
+       0.8072682033047147,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "8.907525435197742`"},
+    {"20", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8112152311\"\>",
+       0.8112152310772237,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "8.462141205394097`"},
+    {"21", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8147863453\"\>",
+       0.8147863452513995,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "8.059175219929262`"},
+    {"22", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8180328075\"\>",
+       0.8180328075456952,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "7.692843085505909`"},
+    {"23", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8209969645\"\>",
+       0.8209969644747014,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "7.3583664040805425`"},
+    {"24", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8237141047\"\>",
+       0.8237141047063505,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "7.0517631879161184`"},
+    {"25", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8262138706\"\>",
+       0.826213870648412,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "6.769688575584036`"},
+    {"26", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8285213443\"\>",
+       0.8285213442806748,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "6.509312306216085`"},
+    {"27", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8306578917\"\>",
+       0.8306578916884683,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "6.268223421996207`"},
+    {"28", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8326418266\"\>",
+       0.832641826622786,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "6.044355391764447`"},
+    {"29", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8344889368\"\>",
+       0.8344889367706653,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "5.83592672645187`"},
+    {"30", "0.8862073482595232`", 
+     TagBox[
+      InterpretationBox["\<\"0.8362129048\"\>",
+       0.8362129047704169,
+       AutoDelete->True],
+      NumberForm[#, {10, 10}]& ], "5.641393471549684`"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6114107532901554`*^9, 3.6114110570695305`*^9, 
+  3.6114111419353848`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", 
+       RowBox[{"NIntegrate", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "x", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{
+         RowBox[{"sumaInferior", "[", 
+          RowBox[{"0", ",", "3", ",", "i"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"10", ",", "10"}], "}"}]}], "]"}], ",", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{
+         RowBox[{"sumaSuperior", "[", 
+          RowBox[{"0", ",", "3", ",", "i"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"10", ",", "10"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"NIntegrate", "[", 
+            RowBox[{
+             RowBox[{"f", "[", "x", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], "-", 
+           RowBox[{"sumaInferior", "[", 
+            RowBox[{"0", ",", "3", ",", "i"}], "]"}]}], 
+          RowBox[{"NIntegrate", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "*", "100"}],
+         "]"}], ",", " ", 
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"NIntegrate", "[", 
+            RowBox[{
+             RowBox[{"f", "[", "x", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], "-", 
+           RowBox[{"sumaSuperior", "[", 
+            RowBox[{"0", ",", "3", ",", "i"}], "]"}]}], 
+          RowBox[{"NIntegrate", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "*", "100"}],
+         "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "30"}], "}"}]}], "]"}], " ", ",", 
+   RowBox[{"TableHeadings", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<\[CapitalIAcute]ndice\>\"", ",", "\"\<Valor Real\>\"", ",", " ", 
+        "\"\<Suma Inferior\>\"", ",", " ", "\"\<Suma Superior\>\"", ",", 
+        "\"\<E.V.R.P. Suma Inferior\>\"", ",", 
+        "\"\<E.V.R.P. Suma Superior\>\""}], "}"}]}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6114108289294815`*^9, 3.6114108344807987`*^9}, {
+  3.6114108773372507`*^9, 3.611410944000063*^9}, {3.611410975029838*^9, 
+  3.6114109955280104`*^9}, {3.6114110319050913`*^9, 3.6114110337691975`*^9}, {
+  3.6114111450235615`*^9, 3.611411288505768*^9}, {3.6114113522284126`*^9, 
+  3.611411360991914*^9}, {3.61141143506015*^9, 3.6114114518141084`*^9}, {
+  3.611411763696947*^9, 3.6114117659790773`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      TagBox["\<\"\[CapitalIAcute]ndice\"\>",
+       HoldForm], 
+      TagBox["\<\"Valor Real\"\>",
+       HoldForm], 
+      TagBox["\<\"Suma Inferior\"\>",
+       HoldForm], 
+      TagBox["\<\"Suma Superior\"\>",
+       HoldForm], 
+      TagBox["\<\"E.V.R.P. Suma Inferior\"\>",
+       HoldForm], 
+      TagBox["\<\"E.V.R.P. Suma Superior\"\>",
+       HoldForm]},
+     {"1", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"3.0000000000\"\>",
+        3.,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0003702294\"\>",
+        0.0003702294122600387,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "238.5212282308292`", "99.95822316154485`"},
+     {"2", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.6580988370\"\>",
+        1.6580988368427965`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.1582839515\"\>",
+        0.15828395154892652`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "87.10055159204425`", "82.13917410414278`"},
+     {"3", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.3861950800\"\>",
+        1.3861950800601766`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.3863184899\"\>",
+        0.3863184898642632,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "56.4188203565012`", "56.407663440956824`"},
+     {"4", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.2611338240\"\>",
+        1.261133823540205,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.5112263809\"\>",
+        0.5112263808932698,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "42.306856969424004`", 
+      "42.31300587866953`"},
+     {"5", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.1861514550\"\>",
+        1.1861514548703507`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.5862255008\"\>",
+        0.5862255007528026,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "33.84581579016537`", "33.85007448830946`"},
+     {"6", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.1361627710\"\>",
+        1.1361627709148368`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.6362244758\"\>",
+        0.6362244758168801,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "28.20507222674426`", 
+      "28.208169671984745`"},
+     {"7", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.1004562330\"\>",
+        1.1004562330941863`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.6719376944\"\>",
+        0.6719376944387948,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "24.175931880438544`", 
+      "24.178275461329186`"},
+     {"8", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.0736761000\"\>",
+        1.0736761000900146`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.6987223788\"\>",
+        0.6987223787665471,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "21.15405070818615`", 
+      "21.155880715860604`"},
+     {"9", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.0528469510\"\>",
+        1.0528469506806164`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7195547539\"\>",
+        0.7195547539486454,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "18.803680961161845`", 
+      "18.805146971324145`"},
+     {"10", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.0361835220\"\>",
+        1.0361835221667868`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7362205451\"\>",
+        0.7362205451080128,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "16.923372865482435`", 
+      "16.924572273754965`"},
+     {"11", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.0225497310\"\>",
+        1.0225497307968303`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7498561153\"\>",
+        0.7498561152888541,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "15.384930265482256`", 
+      "15.385928952006278`"},
+     {"12", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.0111881820\"\>",
+        1.0111881822546926`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7612190347\"\>",
+        0.7612190347057141,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "14.102888476452712`", 
+      "14.10373247291182`"},
+     {"13", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.0015745230\"\>",
+        1.0015745231705429`,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7708337716\"\>",
+        0.7708337715868704,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "13.018079249466426`", 
+      "13.018801626870058`"},
+     {"14", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9933342131\"\>",
+        0.99333421309743,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7790749438\"\>",
+        0.7790749437697344,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "12.088239287148744`", "12.0888643837351`"},
+     {"15", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9861925875\"\>",
+        0.9861925874605685,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7862172694\"\>",
+        0.7862172694213857,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "11.282375326430369`", 
+      "11.282921433061247`"},
+     {"16", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9799436467\"\>",
+        0.9799436467393365,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7924667861\"\>",
+        0.7924667860776028,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "10.577242297066007`", 
+      "10.57772341495737`"},
+     {"17", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9744298611\"\>",
+        0.9744298611254981,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7979810511\"\>",
+        0.7979810510909252,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "9.95506447099999`", "9.955491493257306`"},
+     {"18", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9695287069\"\>",
+        0.9695287068919617,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8028826085\"\>",
+        0.8028826085259761,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "9.402016220704828`", "9.402397745538172`"},
+     {"19", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9651434544\"\>",
+        0.9651434543882799,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8072682033\"\>",
+        0.8072682033047147,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "8.907182532821931`", "8.907525435197742`"},
+     {"20", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9611967196\"\>",
+        0.9611967196066108,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8112152311\"\>",
+        0.8112152310772237,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "8.461831364224617`", "8.462141205394097`"},
+     {"21", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9576258581\"\>",
+        0.9576258581365299,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8147863453\"\>",
+        0.8147863452513995,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "8.058893893993305`", "8.059175219929262`"},
+     {"22", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9543796153\"\>",
+        0.9543796152996834,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8180328075\"\>",
+        0.8180328075456952,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "7.69258652323837`", "7.692843085505909`"},
+     {"23", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9514156502\"\>",
+        0.9514156501524291,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8209969645\"\>",
+        0.8209969644747014,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "7.358131482544408`", 
+      "7.3583664040805425`"},
+     {"24", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9486986785\"\>",
+        0.9486986784808394,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8237141047\"\>",
+        0.8237141047063505,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "7.051547286766105`", 
+      "7.0517631879161184`"},
+     {"25", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9461990615\"\>",
+        0.9461990614719216,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8262138706\"\>",
+        0.826213870648412,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "6.769489480110921`", "6.769688575584036`"},
+     {"26", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9438917201\"\>",
+        0.943891720072511,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8285213443\"\>",
+        0.8285213442806748,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "6.509128131952151`", "6.509312306216085`"},
+     {"27", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9417552906\"\>",
+        0.9417552905991251,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8306578917\"\>",
+        0.8306578916884683,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "6.268052555499107`", "6.268223421996207`"},
+     {"28", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9397714613\"\>",
+        0.9397714612866338,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8326418266\"\>",
+        0.832641826622786,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "6.044196443677481`", "6.044355391764447`"},
+     {"29", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9379244461\"\>",
+        0.937924446101277,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8344889368\"\>",
+        0.8344889367706653,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "5.835778493974823`", "5.83592672645187`"},
+     {"30", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9362005638\"\>",
+        0.9362005637900083,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8362129048\"\>",
+        0.8362129047704169,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "5.6412549081961245`", "5.641393471549684`"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxDividers->{
+     "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+      "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   {None, OutputFormsDump`HeadedColumns}],
+  Function[BoxForm`e$, 
+   TableForm[
+   BoxForm`e$, 
+    TableHeadings -> {
+     None, {
+      "\[CapitalIAcute]ndice", "Valor Real", "Suma Inferior", "Suma Superior",
+        "E.V.R.P. Suma Inferior", "E.V.R.P. Suma Superior"}}]]]], "Output",
+ CellChangeTimes->{{3.6114109186706142`*^9, 3.611410945329139*^9}, {
+   3.6114110107778826`*^9, 3.6114110363573456`*^9}, 3.6114111176259937`*^9, 
+   3.611411161017476*^9, 3.611411264504395*^9, 3.611411297338273*^9, 
+   3.6114113699114237`*^9, 3.611411461468661*^9, 3.6114117667811236`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["M\[EAcute]todo de Simpson", "Section",
+ CellChangeTimes->{{3.6114115087733665`*^9, 3.6114115230571833`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"simpson", "[", 
+    RowBox[{"a0_", ",", "b0_", ",", "n0_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", "=", 
+        RowBox[{"N", "[", "a0", "]"}]}], ",", 
+       RowBox[{"b", "=", 
+        RowBox[{"N", "[", "b0", "]"}]}], ",", 
+       RowBox[{"n", "=", "n0"}], ",", "i"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"h", "=", 
+       FractionBox[
+        RowBox[{"b", "-", "a"}], 
+        RowBox[{"2", "*", "n"}]]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sumPar", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"i", "\[LessEqual]", " ", 
+         RowBox[{"n", "-", "1"}]}], ",", 
+        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"sumPar", " ", "=", 
+          RowBox[{"sumPar", "+", 
+           RowBox[{"f", "[", 
+            RowBox[{"a", "+", 
+             RowBox[{"i", "*", "h", "*", "2"}]}], "]"}]}]}], ";"}]}], "]"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"sumImpar", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"i", "\[LessEqual]", " ", "n"}], ",", 
+        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"sumImpar", " ", "=", 
+          RowBox[{"sumImpar", "+", 
+           RowBox[{"f", "[", 
+            RowBox[{"a", "+", 
+             RowBox[{"h", "*", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"2", "*", "i"}], "-", "1"}], ")"}]}]}], "]"}]}]}], 
+         ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{
+        FractionBox["h", "3"], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", "[", "a", "]"}], "+", 
+          RowBox[{"f", "[", "b", "]"}], "+", 
+          RowBox[{"2", "*", "sumPar"}], "+", 
+          RowBox[{"4", "*", "sumImpar"}]}], ")"}]}], "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6114115422072787`*^9, 3.6114117116719713`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"simpson", "[", 
+  RowBox[{"0", ",", "3", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.611411718850382*^9, 3.6114117239676747`*^9}}],
+
+Cell[BoxData["0.8862065522460075`"], "Output",
+ CellChangeTimes->{3.611411724342696*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData["0.8862073482595232`"], "Output",
+ CellChangeTimes->{3.6114117384705043`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", 
+       RowBox[{"NIntegrate", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "x", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{
+         RowBox[{"metodoTrapecio", "[", 
+          RowBox[{"0", ",", "3", ",", "i"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"10", ",", "10"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{
+         RowBox[{"simpson", "[", 
+          RowBox[{"0", ",", "3", ",", "i"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"10", ",", "10"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"NIntegrate", "[", 
+            RowBox[{
+             RowBox[{"f", "[", "x", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], "-", 
+           RowBox[{"metodoTrapecio", "[", 
+            RowBox[{"0", ",", "3", ",", "i"}], "]"}]}], 
+          RowBox[{"NIntegrate", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "*", "100"}],
+         "]"}], ",", 
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"NIntegrate", "[", 
+            RowBox[{
+             RowBox[{"f", "[", "x", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], "-", 
+           RowBox[{"simpson", "[", 
+            RowBox[{"0", ",", "3", ",", "i"}], "]"}]}], 
+          RowBox[{"NIntegrate", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "*", "100"}],
+         "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "30"}], "}"}]}], "]"}], ",", 
+   RowBox[{"TableHeadings", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<\[CapitalIAcute]ndice\>\"", ",", "\"\<Valor Real\>\"", ",", " ", 
+        "\"\<M\[EAcute]todo de Trapecio\>\"", ",", " ", 
+        "\"\<M\[EAcute]todo de Simpson\>\"", ",", 
+        "\"\<E.V.R.P. M\[EAcute]todo de Trapecio\>\"", ",", 
+        "\"\<E.V.R.P. M\[EAcute]todo de Simpson\>\""}], "}"}]}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.61141181688999*^9, 3.6114118522830143`*^9}, 
+   3.611411958323079*^9, {3.6114120193095675`*^9, 3.611412046854143*^9}, {
+   3.611412175169482*^9, 3.6114121878532076`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      TagBox["\<\"\[CapitalIAcute]ndice\"\>",
+       HoldForm], 
+      TagBox["\<\"Valor Real\"\>",
+       HoldForm], 
+      TagBox["\<\"M\[EAcute]todo de Trapecio\"\>",
+       HoldForm], 
+      TagBox["\<\"M\[EAcute]todo de Simpson\"\>",
+       HoldForm], 
+      TagBox["\<\"E.V.R.P. M\[EAcute]todo de Trapecio\"\>",
+       HoldForm], 
+      TagBox["\<\"E.V.R.P. M\[EAcute]todo de Simpson\"\>",
+       HoldForm]},
+     {"1", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"1.5001851150\"\>",
+        1.50018511470613,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.7108601540\"\>",
+        0.7108601540257721,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "69.28150253464219`", 
+      "19.786249186279733`"},
+     {"2", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.9081913942\"\>",
+        0.9081913941958615,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8788430049\"\>",
+        0.8788430048903626,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "2.480688743950736`", 
+      "0.8309955208139349`"},
+     {"3", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862567850\"\>",
+        0.8862567849622198,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8861725695\"\>",
+        0.8861725695004046,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.005578457772182625`", 
+      "0.003924449417725831`"},
+     {"4", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8861801022\"\>",
+        0.8861801022167373,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862056185\"\>",
+        0.8862056184987951,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0030744546227733736`", 
+      "0.00019518690874033924`"},
+     {"5", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8861884778\"\>",
+        0.8861884778115767,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862065522\"\>",
+        0.8862065522460075,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0021293490720340666`", 
+      "0.00008982249100298104`"},
+     {"6", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8861936234\"\>",
+        0.8861936233658585,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862069369\"\>",
+        0.8862069368516515,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0015487226202361894`", 
+      "0.00004642343267259294`"},
+     {"7", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8861969638\"\>",
+        0.8861969637664906,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862071167\"\>",
+        0.8862071166559462,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0011717904453155223`", 
+      "0.000026134242447688462`"},
+     {"8", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8861992394\"\>",
+        0.8861992394282806,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862072087\"\>",
+        0.886207208735199,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0009150038372517297`", 
+      "0.00001574398186601545`"},
+     {"9", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862008523\"\>",
+        0.886200852314631,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862072595\"\>",
+        0.8862072595070818,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0007330050811441657`", 
+      "0.00001001486182330506`"},
+     {"10", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862020336\"\>",
+        0.8862020336374,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862072892\"\>",
+        0.8862072892434226,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0005997041362388288`", 
+      "6.659400949217057`*^-6"},
+     {"11", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862029230\"\>",
+        0.8862029230428423,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073075\"\>",
+        0.8862073075493045,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0004993432619985593`", 
+      "4.593757738587732`*^-6"},
+     {"12", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862036085\"\>",
+        0.8862036084802033,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073193\"\>",
+        0.886207319298059,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00042199822956036007`", 
+      "3.2680234804751795`*^-6"},
+     {"13", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862041474\"\>",
+        0.8862041473787066,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073271\"\>",
+        0.8862073271092218,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00036118870182122134`", 
+      "2.3866086690311883`*^-6"},
+     {"14", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862045784\"\>",
+        0.8862045784335822,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073325\"\>",
+        0.8862073324617521,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0003125482931709108`", 
+      "1.7826269577105407`*^-6"},
+     {"15", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862049284\"\>",
+        0.8862049284409771,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073362\"\>",
+        0.8862073362266247,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00027305331543999833`", 
+      "1.3577971881014611`*^-6"},
+     {"16", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862052164\"\>",
+        0.8862052164084695,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073389\"\>",
+        0.8862073389358565,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00024055894569991623`", 
+      "1.0520863707436966`*^-6"},
+     {"17", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862054561\"\>",
+        0.8862054561082116,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073409\"\>",
+        0.886207340924963,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0002135111286708849`", 
+      "8.276347737165059`*^-7"},
+     {"18", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862056577\"\>",
+        0.8862056577089692,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073424\"\>",
+        0.8862073424115701,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0001907624166409924`", 
+      "6.598854244705385`*^-7"},
+     {"19", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862058288\"\>",
+        0.8862058288464976,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073435\"\>",
+        0.8862073435403992,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0001714511878741646`", 
+      "5.325078820150936`*^-7"},
+     {"20", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862059753\"\>",
+        0.8862059753419174,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073444\"\>",
+        0.8862073444098549,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00015492058472777267`", 
+      "4.343981415189528`*^-7"},
+     {"21", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862061017\"\>",
+        0.8862061016939647,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073451\"\>",
+        0.8862073450882006,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0001406629679715384`", 
+      "3.5785333354972275`*^-7"},
+     {"22", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862062114\"\>",
+        0.8862062114226888,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073456\"\>",
+        0.8862073456236493,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.0001282811338192404`", 
+      "2.974330846720814`*^-7"},
+     {"23", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862063073\"\>",
+        0.8862063073135654,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073461\"\>",
+        0.8862073460508159,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00011746076804809275`", 
+      "2.492314391752516`*^-7"},
+     {"24", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862063916\"\>",
+        0.886206391593595,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073464\"\>",
+        0.8862073463949237,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00010795057500044642`", 
+      "2.104021681250111`*^-7"},
+     {"25", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862064661\"\>",
+        0.8862064660601667,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073467\"\>",
+        0.8862073466746054,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00009954773656393398`", 
+      "1.7884276808444181`*^-7"},
+     {"26", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862065322\"\>",
+        0.8862065321765928,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073469\"\>",
+        0.8862073469037985,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00009208713197273847`", 
+      "1.529805238380909`*^-7"},
+     {"27", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862065911\"\>",
+        0.8862065911437967,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073471\"\>",
+        0.8862073470930479,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00008543324854316185`", 
+      "1.316255447459631`*^-7"},
+     {"28", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862066440\"\>",
+        0.8862066439547095,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073473\"\>",
+        0.8862073472504187,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00007947404352667036`", 
+      "1.1386776115495448`*^-7"},
+     {"29", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862066914\"\>",
+        0.8862066914359712,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073474\"\>",
+        0.8862073473821391,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00007411623851710587`", 
+      "9.900437589710246`*^-8"},
+     {"30", "0.8862073482595232`", 
+      TagBox[
+       InterpretationBox["\<\"0.8862067343\"\>",
+        0.8862067342802122,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.8862073475\"\>",
+        0.8862073474930632,
+        AutoDelete->True],
+       NumberForm[#, {10, 10}]& ], "0.00006928167681684663`", 
+      "8.648766093838689`*^-8"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxDividers->{
+     "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+      "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   {None, OutputFormsDump`HeadedColumns}],
+  Function[BoxForm`e$, 
+   TableForm[
+   BoxForm`e$, 
+    TableHeadings -> {
+     None, {"\[CapitalIAcute]ndice", "Valor Real", 
+       "M\[EAcute]todo de Trapecio", "M\[EAcute]todo de Simpson", 
+       "E.V.R.P. M\[EAcute]todo de Trapecio", 
+       "E.V.R.P. M\[EAcute]todo de Simpson"}}]]]], "Output",
+ CellChangeTimes->{{3.611411832825901*^9, 3.611411853317073*^9}, 
+   3.611411959459144*^9, 3.611412189198284*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6114107529431353`*^9, 3.6114107565923443`*^9}}]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{942, 987},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 123, 1, 117, "Section"],
+Cell[705, 25, 2044, 50, 335, "Input"],
+Cell[2752, 77, 273, 7, 50, "Input"],
+Cell[CellGroupData[{
+Cell[3050, 88, 287, 7, 45, "Input"],
+Cell[3340, 97, 9727, 168, 366, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13104, 270, 241, 6, 45, "Input"],
+Cell[13348, 278, 137, 2, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13522, 285, 196, 4, 45, "Input"],
+Cell[13721, 291, 344, 5, 77, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14102, 301, 1540, 40, 238, "Input"],
+Cell[15645, 343, 6935, 197, 766, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22629, 546, 158, 2, 117, "Section"],
+Cell[22790, 550, 100, 2, 45, "Input"],
+Cell[22893, 554, 1247, 35, 306, "Input"],
+Cell[CellGroupData[{
+Cell[24165, 593, 218, 4, 45, "Input"],
+Cell[24386, 599, 241, 4, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24664, 608, 1388, 38, 238, "Input"],
+Cell[26055, 648, 6713, 195, 766, "Output"]
+}, Open  ]],
+Cell[32783, 846, 1287, 35, 306, "Input"],
+Cell[CellGroupData[{
+Cell[34095, 885, 166, 3, 45, "Input"],
+Cell[34264, 890, 88, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34389, 896, 1460, 39, 238, "Input"],
+Cell[35852, 937, 6780, 196, 766, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42669, 1138, 3046, 77, 464, "Input"],
+Cell[45718, 1217, 13288, 384, 796, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59055, 1607, 114, 1, 117, "Section"],
+Cell[59172, 1610, 2238, 60, 392, "Input"],
+Cell[CellGroupData[{
+Cell[61435, 1674, 161, 3, 45, "Input"],
+Cell[61599, 1679, 88, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61724, 1685, 174, 5, 45, "Input"],
+Cell[61901, 1692, 90, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62028, 1698, 2891, 76, 464, "Input"],
+Cell[64922, 1776, 13572, 400, 880, "Output"]
+}, Open  ]],
+Cell[78509, 2179, 96, 1, 45, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

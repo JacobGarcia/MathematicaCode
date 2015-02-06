@@ -1,0 +1,591 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     22627,        582]
+NotebookOptionsPosition[     21823,        552]
+NotebookOutlinePosition[     22171,        567]
+CellTagsIndexPosition[     22128,        564]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "token", "=", 
+   "\"\<CAACEdEose0cBAGP0GbKFyo8aLZBb5Pbtzn9mT74BLtJR2yb3dYzPfPUVozrQWDovHJg9o\
+gtUbbzfjqNQQYHipb6UZB4Pc3WaEtSRijGTr5xwUr9EQDZBkGLyuZCrtCeayPxPZCWZCEnxUFWfV6x\
+4vbKj2NdrUh4KWP1iseFlA2vqnDlBdaIs2g3KdIs9gvBQIZD\>\""}], ";"}], "\n", 
+ RowBox[{"createMyFacebookPDF", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.6126299277725368`*^9, 3.6126299455525537`*^9}, 
+   3.6126303460324597`*^9, {3.612630387419827*^9, 3.6126304156364408`*^9}, 
+   3.612630450625442*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Extracting friends data\"\>"], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.612630461882086*^9}}],
+
+Cell[BoxData["\<\"Extracting Connections\"\>"], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.6126304635201797`*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   $CellContext`mrtProgressBar[$CellContext`i$340912, \
+$CellContext`groupsCompLen$340912], StandardForm],
+  ImageSizeCache->{340., {5., 11.}}]], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.6126304635261803`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"\"Connections number: \"","0"},
+  "RowDefault"]], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.6126304635291805`*^9}}],
+
+Cell[BoxData["\<\"Extracting user pictures:\"\>"], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.612630463547181*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   $CellContext`mrtProgressBar[$CellContext`i$340921, 
+    Length[{}]], StandardForm],
+  ImageSizeCache->{340., {5., 11.}}]], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.6126304635641823`*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   GraphicsGrid[
+    If[Length[$CellContext`tabImg$340921] == 0, {{""}}, 
+     Partition[$CellContext`tabImg$340921, 10, 10, 1, {}]], ImageSize -> 200],
+    StandardForm],
+  ImageSizeCache->{200., {98., 102.}}]], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.6126304635901833`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"\"Photo's number: \"","0"},
+  "RowDefault"]], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.612630463594184*^9}}],
+
+Cell[BoxData["\<\"Creating GraphPlot\"\>"], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.612630463597184*^9}}],
+
+Cell[BoxData["\<\"Creating PDF\"\>"], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.612630463746193*^9}}],
+
+Cell[BoxData["\<\"PDF Created!\"\>"], "Print",
+ CellChangeTimes->{{3.6126303241222067`*^9, 3.61263034656349*^9}, {
+  3.6126303881978717`*^9, 3.6126304163204803`*^9}, {3.6126304522995377`*^9, 
+  3.612630464506236*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Get", " ", "friends", " ", "name", " ", "and", " ", "facebook", " ", 
+    "code"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"getFriendsList", "[", "]"}], ":=", 
+    RowBox[{"Rule", "@@@", 
+     RowBox[{
+      RowBox[{"Import", "[", 
+       RowBox[{
+        RowBox[{
+        "\"\<https://graph.facebook.com/me/friends?access_token=\>\"", "<>", 
+         "token"}], ",", "\"\<JSON\>\""}], "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ",", "2", ",", "All", ",", "All", ",", "2"}], "]"}], 
+      "]"}]}]}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Get", " ", "your", " ", "friends", " ", "photo", " ", "link", " ", "and",
+      " ", "sex"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"cName", ",", "cPhotoLink", ",", "cSex", ",", "cCode"}], "}"}], 
+     "=", 
+     RowBox[{"Range", "[", "4", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"getFriendsData", "[", "fList_", "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"url", ",", "query", ",", "friendsData", ",", "fListString"}], 
+       "}"}], ",", 
+      RowBox[{
+       RowBox[{"fListString", "=", 
+        RowBox[{"conv2StringList", "[", 
+         RowBox[{"fList", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"url", "=", 
+        RowBox[{
+        "\"\<https://api.facebook.com/method/fql.query?access_token=\>\"", "<>",
+          "token", "<>", "\"\<&query=\>\""}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"query", "=", 
+        RowBox[{
+        "url", "<>", 
+         "\"\<SELECT uid, name, sex,pic_square FROM user WHERE uid in \>\"", "<>",
+          "fListString", "<>", "\"\<&format=JSON\>\""}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"query", "=", 
+        RowBox[{"StringReplace", "[", 
+         RowBox[{"query", ",", 
+          RowBox[{"\"\< \>\"", "\[Rule]", "\"\<%20\>\""}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"friendsData", "=", 
+        RowBox[{
+         RowBox[{"Import", "[", 
+          RowBox[{"query", ",", "\"\<JSON\>\""}], "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "All", ",", 
+           RowBox[{"-", "1"}]}], "]"}], "]"}]}]}]}], "]"}]}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Get", " ", "friends", " ", "pairs", " ", "connections"}], "*)"}],
+    "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"getFriendsPairsPart", "[", 
+     RowBox[{"fList1_", ",", "fList2_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "url", ",", "query1", ",", "friendsPairs", ",", "friendsStr1", ",", 
+        "firendsStr2"}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"friendsStr1", "=", 
+        RowBox[{"conv2StringList", "[", "fList1", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"firendsStr2", "=", 
+        RowBox[{"conv2StringList", "[", "fList2", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"url", "=", 
+        RowBox[{
+        "\"\<https://api.facebook.com/method/fql.query?access_token=\>\"", "<>",
+          "token", "<>", "\"\<&query=\>\""}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"query1", "=", 
+        RowBox[{
+        "url", "<>", "\"\<SELECT uid1, uid2 FROM friend WHERE uid1 in \>\"", "<>",
+          "friendsStr1", "<>", "\"\<and uid2 in\>\"", "<>", "firendsStr2", 
+         "<>", "\"\<&format=JSON\>\""}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"query1", "=", 
+        RowBox[{"StringReplace", "[", 
+         RowBox[{"query1", ",", 
+          RowBox[{"\"\< \>\"", "\[Rule]", "\"\<%20\>\""}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"friendsPairs", "=", 
+        RowBox[{"Import", "[", 
+         RowBox[{"query1", ",", "\"\<JSON\>\""}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"friendsPairs", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"Sort", "/@", "friendsPairs"}], ")"}], "//", 
+         "Union"}]}]}]}], "]"}]}], "\[IndentingNewLine]", "\n", 
+   RowBox[{
+    RowBox[{"getFriendsPairs", "[", "friendsList_", "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"groupsComb", ",", "groupsCompLen", ",", 
+        RowBox[{"maxUsers", "=", "100"}], ",", "friendsPairs", ",", 
+        RowBox[{"i", "=", "1"}]}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"SetSharedVariable", "[", "i", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"groupsComb", "=", 
+        RowBox[{"Partition", "[", 
+         RowBox[{
+          RowBox[{"friendsList", "[", 
+           RowBox[{"[", 
+            RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", "maxUsers", ",", 
+          "maxUsers", ",", "1", ",", 
+          RowBox[{"{", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"groupsComb", "=", 
+        RowBox[{"Subsets", "[", 
+         RowBox[{"groupsComb", ",", 
+          RowBox[{"{", "2", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"groupsCompLen", "=", 
+        RowBox[{"Length", "[", "groupsComb", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", "\"\<Extracting Connections\>\"", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"Dynamic", "@", 
+         RowBox[{"mrtProgressBar", "[", 
+          RowBox[{"i", ",", "groupsCompLen"}], "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"friendsPairs", "=", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{
+          RowBox[{"ParallelMap", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"i", "++"}], ";", 
+               RowBox[{"getFriendsPairsPart", "@@", "#"}]}], ")"}], "&"}], 
+            ",", "groupsComb"}], "]"}], ",", "1"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"friendsPairs", "=", 
+        RowBox[{"UndirectedEdge", "@@@", 
+         RowBox[{"friendsPairs", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "All", ",", "2"}], "]"}], "]"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"friendsPairs", "=", 
+        RowBox[{"Union", "[", 
+         RowBox[{"Sort", "/@", "friendsPairs"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"Row", "@", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Connections number: \>\"", ",", 
+           RowBox[{"Length", "@", "friendsPairs"}]}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "friendsPairs"}]}], "]"}]}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Get", " ", "friends", " ", "photos"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"getFriendsPhotos", "[", "friendsData_", "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"append", ",", "friends", ",", "photos", ",", "page", ",", 
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"tabImg", "=", 
+         RowBox[{"{", "}"}]}]}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"SetSharedVariable", "[", "i", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"SetSharedVariable", "[", "tabImg", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", "\"\<Extracting user pictures:\>\"", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"Dynamic", "@", 
+         RowBox[{"mrtProgressBar", "[", 
+          RowBox[{"i", ",", 
+           RowBox[{"Length", "[", "friendsData", "]"}]}], "]"}]}], "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"Dynamic", "@", 
+         RowBox[{"GraphicsGrid", "[", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Length", "[", "tabImg", "]"}], "\[Equal]", "0"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "\"\<\>\"", "}"}], "}"}], ",", 
+             RowBox[{"Partition", "[", 
+              RowBox[{"tabImg", ",", "10", ",", "10", ",", "1", ",", 
+               RowBox[{"{", "}"}]}], "]"}]}], "]"}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"append", "[", "data_Image", "]"}], ":=", 
+        RowBox[{"Module", "[", 
+         RowBox[{
+          RowBox[{"{", "}"}], ",", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Length", "[", "tabImg", "]"}], ">", "100"}], ",", 
+             RowBox[{"tabImg", "=", 
+              RowBox[{"{", "}"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"tabImg", ",", "data"}], "]"}], ";", 
+           "\[IndentingNewLine]", "data"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"CloseKernels", "[", "]"}], ";", 
+         RowBox[{"LaunchKernels", "[", "8", "]"}], ";"}], "*)"}], 
+       RowBox[{"photos", "=", 
+        RowBox[{"ParallelMap", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"i", "++"}], ";", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"append", "[", 
+                RowBox[{"Import", "[", 
+                 RowBox[{"#", "[", 
+                  RowBox[{"[", "cPhotoLink", "]"}], "]"}], "]"}], "]"}], ",", 
+               RowBox[{"ToString", "[", 
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "cCode", "]"}], "]"}], "]"}]}], "}"}]}], ")"}], 
+           "&"}], ",", "friendsData"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"Row", "@", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Photo's number: \>\"", ",", 
+           RowBox[{"Length", "[", "photos", "]"}]}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "photos"}]}], "]"}]}], "\[IndentingNewLine]", 
+   "\n", 
+   RowBox[{
+    RowBox[{"adjustPhotos", "[", 
+     RowBox[{"friendsPhotos_", ",", "friendsPairs_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"friends", ",", "photosSel", ",", "graph", ",", "page"}], 
+       "}"}], ",", 
+      RowBox[{
+       RowBox[{"graph", "=", 
+        RowBox[{"Graph", "@", "friendsPairs"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"friends", "=", 
+        RowBox[{"VertexList", "@", "graph"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"page", "=", 
+        RowBox[{"PageRankCentrality", "[", 
+         RowBox[{"graph", ",", "0.1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"page", "=", 
+        RowBox[{"Rescale", "[", 
+         RowBox[{"page", ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"Max", "[", "page", "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0.1", ",", "0.9"}], "}"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"page", "=", 
+        RowBox[{"Rule", "@@@", 
+         RowBox[{"Transpose", "[", 
+          RowBox[{"{", 
+           RowBox[{"friends", ",", "page"}], "}"}], "]"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"photosSel", "=", 
+        RowBox[{"Select", "[", 
+         RowBox[{"friendsPhotos", ",", 
+          RowBox[{
+           RowBox[{"MemberQ", "[", 
+            RowBox[{"friends", ",", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "&"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], "\[Rule]", 
+           RowBox[{"Hyperlink", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Magnify", "[", 
+               RowBox[{
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], ",", 
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "/.", "page"}], ",", 
+             RowBox[{"\"\<http://www.facebook.com/profile.php?id=\>\"", "<>", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}]}], ")"}], "&"}], "/@",
+         "photosSel"}]}]}], "]"}]}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Facebook", " ", "graph"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"createGraph", "[", 
+     RowBox[{"friendsPairs_", ",", "friendsPhotosForVertex_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"g1", ",", "g2", ",", "g3", ",", "label"}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"g1", "=", 
+        RowBox[{"Graph", "[", 
+         RowBox[{"friendsPairs", ",", 
+          RowBox[{"VertexShape", "\[Rule]", "friendsPhotosForVertex"}], ",", 
+          RowBox[{"VertexSize", "\[Rule]", "5"}], ",", 
+          RowBox[{"EdgeStyle", "\[Rule]", 
+           RowBox[{"Opacity", "[", "0", "]"}]}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"g2", "=", 
+        RowBox[{"Graph", "[", 
+         RowBox[{"friendsPairs", ",", 
+          RowBox[{"VertexSize", "\[Rule]", "0"}], ",", 
+          RowBox[{"EdgeStyle", "\[Rule]", 
+           RowBox[{"Thickness", "[", "0.0001", "]"}]}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"label", "=", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{
+             "Text", "[", "\"\<by Rodrigo Murta\\nwww.rodrigomurta.com\>\"", 
+              "]"}], ",", "Blue"}], "]"}], "}"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", "100"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"g3", "=", 
+        RowBox[{"Show", "[", 
+         RowBox[{"g2", ",", "g1", ",", "label", ",", 
+          RowBox[{"ImageSize", "\[Rule]", "3000"}]}], "]"}]}]}]}], "]"}]}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Execute", " ", "code"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"createMyFacebookPDF", "[", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", "myFacebookGraph", "}"}], ",", 
+       RowBox[{
+        RowBox[{"SetDirectory", "[", 
+         RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", "\"\<Extracting friends data\>\"", "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"friendsList", "=", 
+         RowBox[{"getFriendsList", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"friendsData", "=", 
+         RowBox[{"getFriendsData", "[", "friendsList", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"friendsPairs", "=", 
+         RowBox[{"getFriendsPairs", "[", "friendsList", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"friendsPhotos", "=", 
+         RowBox[{"getFriendsPhotos", "[", "friendsData", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"photosForVertice", "=", 
+         RowBox[{"adjustPhotos", "[", 
+          RowBox[{"friendsPhotos", ",", "friendsPairs"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", "\"\<Creating GraphPlot\>\"", "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"myFacebookGraph", "=", 
+         RowBox[{
+          RowBox[{"createGraph", "[", 
+           RowBox[{"friendsPairs", ",", "photosForVertice"}], "]"}], " ", 
+          RowBox[{"Print", "[", "\"\<Creating PDF\>\"", "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Export", "[", 
+         RowBox[{"\"\<myFacebookGraph.pdf\>\"", ",", "myFacebookGraph"}], 
+         "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", "\"\<PDF Created!\>\"", "]"}], ";"}]}], "]"}], "//",
+      "Quiet"}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "quiet", " ", "to", " ", "avoid", " ", "uni", " ", "core", " ", "msg"}], 
+    "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Other", " ", "Funcitons"}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"mrtProgressBar", "[", 
+     RowBox[{"var_", ",", "total_"}], "]"}], ":=", 
+    RowBox[{"Row", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ProgressIndicator", "[", 
+        RowBox[{"var", ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "total"}], "}"}]}], "]"}], ",", "\"\< \>\"", ",", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"NumberForm", "[", 
+           RowBox[{
+            RowBox[{"100.", " ", 
+             RowBox[{"var", "/", "total"}]}], ",", 
+            RowBox[{"{", 
+             RowBox[{"\[Infinity]", ",", "2"}], "}"}]}], "]"}], ",", 
+          "\"\<%\>\""}], "}"}], "]"}], ",", "\"\<% \>\"", ",", "var"}], "}"}],
+      "]"}]}], "\n", 
+   RowBox[{
+    RowBox[{"conv2StringList", "[", "list_", "]"}], ":=", 
+    RowBox[{"StringReplace", "[", 
+     RowBox[{
+      RowBox[{"ToString", "[", "list", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<{\>\"", "\[Rule]", "\"\<(\>\""}], ",", 
+        RowBox[{"\"\<}\>\"", "\[Rule]", "\"\<)\>\""}], ",", 
+        RowBox[{"\"\< \>\"", "\[Rule]", "\"\<\>\""}]}], "}"}]}], 
+     "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6126297811171484`*^9, 3.6126297811191483`*^9}, {
+  3.6126299235222936`*^9, 3.6126299237913094`*^9}}],
+
+Cell[BoxData["538793693"], "Input",
+ CellChangeTimes->{{3.612650336049694*^9, 3.612650341565009*^9}}]
+},
+WindowSize->{701, 810},
+WindowMargins->{{334, Automatic}, {-156, Automatic}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 510, 10, 132, "Input"],
+Cell[CellGroupData[{
+Cell[1114, 36, 228, 3, 23, "Print"],
+Cell[1345, 41, 229, 3, 23, "Print"],
+Cell[1577, 46, 362, 7, 26, "Print"],
+Cell[1942, 55, 260, 5, 23, "Print"],
+Cell[2205, 62, 230, 3, 23, "Print"],
+Cell[2438, 67, 342, 7, 26, "Print"],
+Cell[2783, 76, 429, 9, 208, "Print"],
+Cell[3215, 87, 254, 5, 23, "Print"],
+Cell[3472, 94, 223, 3, 23, "Print"],
+Cell[3698, 99, 217, 3, 23, "Print"],
+Cell[3918, 104, 217, 3, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[4162, 111, 17553, 436, 2312, "Input"],
+Cell[21718, 549, 101, 1, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
